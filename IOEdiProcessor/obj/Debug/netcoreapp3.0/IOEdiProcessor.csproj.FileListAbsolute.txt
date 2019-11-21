@@ -1,0 +1,11 @@
+C:\Users\Nicolas.Biancaniello\source\repos\IOEdiProcessor\IOEdiProcessor\bin\Debug\netcoreapp3.0\IOEdiProcessor.deps.json
+C:\Users\Nicolas.Biancaniello\source\repos\IOEdiProcessor\IOEdiProcessor\bin\Debug\netcoreapp3.0\IOEdiProcessor.dll
+C:\Users\Nicolas.Biancaniello\source\repos\IOEdiProcessor\IOEdiProcessor\bin\Debug\netcoreapp3.0\IOEdiProcessor.pdb
+C:\Users\Nicolas.Biancaniello\source\repos\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp3.0\IOEdiProcessor.csprojAssemblyReference.cache
+C:\Users\Nicolas.Biancaniello\source\repos\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp3.0\IOEdiProcessor.AssemblyInfoInputs.cache
+C:\Users\Nicolas.Biancaniello\source\repos\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp3.0\IOEdiProcessor.AssemblyInfo.cs
+C:\Users\Nicolas.Biancaniello\source\repos\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp3.0\IOEdiProcessor.dll
+C:\Users\Nicolas.Biancaniello\source\repos\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp3.0\IOEdiProcessor.pdb
+C:\Users\Nicolas.Biancaniello\Desktop\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp3.0\IOEdiProcessor.csprojAssemblyReference.cache
+C:\Users\Nicolas.Biancaniello\Desktop\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp3.0\IOEdiProcessor.AssemblyInfoInputs.cache
+C:\Users\Nicolas.Biancaniello\Desktop\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp3.0\IOEdiProcessor.AssemblyInfo.cs

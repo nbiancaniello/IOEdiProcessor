@@ -1,0 +1,17 @@
+C:\Users\Nicolas.Biancaniello\source\repos\IOEdiProcessor\IOEdiProcessor\bin\Debug\netcoreapp2.2\IOEdiProcessor.deps.json
+C:\Users\Nicolas.Biancaniello\source\repos\IOEdiProcessor\IOEdiProcessor\bin\Debug\netcoreapp2.2\IOEdiProcessor.dll
+C:\Users\Nicolas.Biancaniello\source\repos\IOEdiProcessor\IOEdiProcessor\bin\Debug\netcoreapp2.2\IOEdiProcessor.pdb
+C:\Users\Nicolas.Biancaniello\source\repos\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp2.2\IOEdiProcessor.AssemblyInfoInputs.cache
+C:\Users\Nicolas.Biancaniello\source\repos\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp2.2\IOEdiProcessor.AssemblyInfo.cs
+C:\Users\Nicolas.Biancaniello\source\repos\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp2.2\IOEdiProcessor.dll
+C:\Users\Nicolas.Biancaniello\source\repos\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp2.2\IOEdiProcessor.pdb
+C:\Users\Nicolas.Biancaniello\Desktop\IOEdiProcessor\IOEdiProcessor\bin\Debug\netcoreapp2.2\IOEdiProcessor.deps.json
+C:\Users\Nicolas.Biancaniello\Desktop\IOEdiProcessor\IOEdiProcessor\bin\Debug\netcoreapp2.2\IOEdiProcessor.runtimeconfig.json
+C:\Users\Nicolas.Biancaniello\Desktop\IOEdiProcessor\IOEdiProcessor\bin\Debug\netcoreapp2.2\IOEdiProcessor.runtimeconfig.dev.json
+C:\Users\Nicolas.Biancaniello\Desktop\IOEdiProcessor\IOEdiProcessor\bin\Debug\netcoreapp2.2\IOEdiProcessor.dll
+C:\Users\Nicolas.Biancaniello\Desktop\IOEdiProcessor\IOEdiProcessor\bin\Debug\netcoreapp2.2\IOEdiProcessor.pdb
+C:\Users\Nicolas.Biancaniello\Desktop\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp2.2\IOEdiProcessor.AssemblyInfoInputs.cache
+C:\Users\Nicolas.Biancaniello\Desktop\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp2.2\IOEdiProcessor.AssemblyInfo.cs
+C:\Users\Nicolas.Biancaniello\Desktop\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp2.2\IOEdiProcessor.dll
+C:\Users\Nicolas.Biancaniello\Desktop\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp2.2\IOEdiProcessor.pdb
+C:\Users\Nicolas.Biancaniello\Desktop\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp2.2\IOEdiProcessor.csprojAssemblyReference.cache
