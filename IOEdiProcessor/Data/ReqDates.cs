@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Text;
 
 namespace IOEdiProcessor.Data
@@ -10,5 +11,11 @@ namespace IOEdiProcessor.Data
         public ReqDates()
         {
         }
+
+        //public ReqDates(DbDataReader dr)
+        //{
+        //    DateTime reqDelDate = new DateTime();
+        //    this.ReqDelDate = (DateTime.TryParse(dr["REQ_DEL_DATE"].ToString(), out reqDelDate)) ? reqDelDate.ToString("yyyyMMdd") : null;
+        //}
     }
 }

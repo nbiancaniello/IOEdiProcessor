@@ -15,3 +15,6 @@ C:\Users\Nicolas.Biancaniello\Desktop\IOEdiProcessor\IOEdiProcessor\obj\Debug\ne
 C:\Users\Nicolas.Biancaniello\Desktop\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp2.2\IOEdiProcessor.dll
 C:\Users\Nicolas.Biancaniello\Desktop\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp2.2\IOEdiProcessor.pdb
 C:\Users\Nicolas.Biancaniello\Desktop\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp2.2\IOEdiProcessor.csprojAssemblyReference.cache
+C:\Users\Nicolas.Biancaniello\source\repos\IOEdiProcessor\IOEdiProcessor\bin\Debug\netcoreapp2.2\IOEdiProcessor.runtimeconfig.json
+C:\Users\Nicolas.Biancaniello\source\repos\IOEdiProcessor\IOEdiProcessor\bin\Debug\netcoreapp2.2\IOEdiProcessor.runtimeconfig.dev.json
+C:\Users\Nicolas.Biancaniello\source\repos\IOEdiProcessor\IOEdiProcessor\obj\Debug\netcoreapp2.2\IOEdiProcessor.csprojAssemblyReference.cache

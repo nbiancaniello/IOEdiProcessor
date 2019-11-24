@@ -1,5 +1,7 @@
-﻿using System;
+﻿using IOEdiProcessor.Logic;
+using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Text;
 
 namespace IOEdiProcessor.Data
@@ -21,5 +23,20 @@ namespace IOEdiProcessor.Data
         public ShipFrom()
         {
         }
+
+        //public ShipFrom(DbDataReader dr)
+        //{
+        //    this.ShipFromID = dr["SHIP_FROM_ID"].ToString();
+        //    this.ShipFromName = dr["SHIP_FROM_NAME"].ToString();
+        //    this.Address1 = UtilLogic.ParseText(dr["SHIP_FROM_ADDRESS1"].ToString());
+        //    this.Address2 = UtilLogic.ParseText(dr["SHIP_FROM_ADDRESS2"].ToString());
+        //    this.Address3 = UtilLogic.ParseText(dr["SHIP_FROM_ADDRESS3"].ToString());
+        //    this.PostalCode = dr["SHIP_FROM_PCODE"].ToString();
+        //    this.City = UtilLogic.ParseText(dr["SHIP_FROM_CITY"].ToString());
+        //    this.Province = UtilLogic.ParseText(dr["SHIP_FROM_PROV"].ToString());
+        //    this.Country = UtilLogic.ParseText(dr["SHIP_FROM_COUNTRY"].ToString());
+        //    this.DunsNumber = "259898559"; //Hardcoded, ToDo: create a table and save this data.
+        //    this.ShipFromSupplierID = dr["SHIP_FROM_SUPPLIER_ID"].ToString();
+        //}
     }
 }

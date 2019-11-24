@@ -10,6 +10,7 @@ namespace IOEdiProcessor.Data
         public string Pallet_Code { get; set; }
         public string Pallet_Description { get; set; }
         public string Lid_Code { get; set; }
+        public string Lid_Description { get; set; }
         public string Box_Label { get; set; }
         public string Box_Code { get; set; }
         public string Box_Description { get; set; }

@@ -17,19 +17,6 @@ namespace IOEdiProcessor.Logic
     public class EdifactLogic
     {
         private readonly IOEdiProcessorContext _context;
-        private readonly static Dictionary<string, string> _parse = new Dictionary<string, string>
-        {
-            { "á","a" },
-            { "é","e" },
-            { "í","i" },
-            { "ó","o" },
-            { "ú","u" },
-            { "ñ","n" },
-            { "¼", " 1/4 "},
-            { "½", " 2/4 "},
-            { "¾", " 3/4 "}
-        };
-
         public EdifactLogic(IOEdiProcessorContext context)
         {
             _context = context;
@@ -217,7 +204,6 @@ namespace IOEdiProcessor.Logic
 
             try
             {
-                //using (DbConnection con = _context.Database.GetDbConnection())
                 var con = (SqlConnection)_context.Database.GetDbConnection();
                 using (DbCommand cmd = con.CreateCommand())
                 {
@@ -249,13 +235,13 @@ namespace IOEdiProcessor.Logic
                                 {
                                     ShipToID = dr["SHIP_TO_ID"].ToString(),
                                     ShipToName = dr["SHIP_TO_NAME"].ToString(),
-                                    Address1 = ParseText(dr["SHIP_TO_ADDRESS1"].ToString()),
-                                    Address2 = ParseText(dr["SHIP_TO_ADDRESS2"].ToString()),
-                                    Address3 = ParseText(dr["SHIP_TO_ADDRESS3"].ToString()),
-                                    City = ParseText(dr["SHIP_TO_CITY"].ToString()),
-                                    Province = ParseText(dr["SHIP_TO_PROV"].ToString()),
+                                    Address1 = UtilLogic.ParseText(dr["SHIP_TO_ADDRESS1"].ToString()),
+                                    Address2 = UtilLogic.ParseText(dr["SHIP_TO_ADDRESS2"].ToString()),
+                                    Address3 = UtilLogic.ParseText(dr["SHIP_TO_ADDRESS3"].ToString()),
+                                    City = UtilLogic.ParseText(dr["SHIP_TO_CITY"].ToString()),
+                                    Province = UtilLogic.ParseText(dr["SHIP_TO_PROV"].ToString()),
                                     PostalCode = dr["SHIP_TO_PCODE"].ToString(),
-                                    Country = ParseText(dr["SHIP_TO_COUNTRY"].ToString()),
+                                    Country = UtilLogic.ParseText(dr["SHIP_TO_COUNTRY"].ToString()),
                                     ShipToDockCode = (custID == "VWT" | custID == "DELP" | custID == "DELP_CN") ? dr["SHIP_TO_DOCK_CODE"].ToString() : "",
                                     ShipToDropZone = (custID == "VWT" | custID == "DELP" | custID == "DELP_CN") ? dr["SHIP_TO_DROP_ZONE"].ToString() : "",
                                     UltimateDestination = dr["SHIP_TO_UDESTINATION"].ToString(),
@@ -265,34 +251,34 @@ namespace IOEdiProcessor.Logic
                                 {
                                     ShipFromID = dr["SHIP_FROM_ID"].ToString(),
                                     ShipFromName = dr["SHIP_FROM_NAME"].ToString(),
-                                    Address1 = ParseText(dr["SHIP_FROM_ADDRESS1"].ToString()),
-                                    Address2 = ParseText(dr["SHIP_FROM_ADDRESS2"].ToString()),
-                                    Address3 = ParseText(dr["SHIP_FROM_ADDRESS3"].ToString()),
+                                    Address1 = UtilLogic.ParseText(dr["SHIP_FROM_ADDRESS1"].ToString()),
+                                    Address2 = UtilLogic.ParseText(dr["SHIP_FROM_ADDRESS2"].ToString()),
+                                    Address3 = UtilLogic.ParseText(dr["SHIP_FROM_ADDRESS3"].ToString()),
                                     PostalCode = dr["SHIP_FROM_PCODE"].ToString(),
-                                    City = ParseText(dr["SHIP_FROM_CITY"].ToString()),
-                                    Province = ParseText(dr["SHIP_FROM_PROV"].ToString()),
-                                    Country = ParseText(dr["SHIP_FROM_COUNTRY"].ToString()),
+                                    City = UtilLogic.ParseText(dr["SHIP_FROM_CITY"].ToString()),
+                                    Province = UtilLogic.ParseText(dr["SHIP_FROM_PROV"].ToString()),
+                                    Country = UtilLogic.ParseText(dr["SHIP_FROM_COUNTRY"].ToString()),
                                     DunsNumber = "259898559", //Hardcoded, ToDo: create a table and save this data.
                                     ShipFromSupplierID = dr["SHIP_FROM_SUPPLIER_ID"].ToString()
                                 },
                                 SoldTo = new SoldTo
                                 {
                                     SoldToID = dr["BUYER_ID"].ToString(),
-                                    SoldToName = ParseText(dr["BUYER_NAME"].ToString()),
-                                    Address1 = ParseText(dr["BUYER_ADDRESS1"].ToString()),
-                                    Address2 = ParseText(dr["BUYER_ADDRESS2"].ToString()),
-                                    City = ParseText(dr["BUYER_CITY"].ToString()),
+                                    SoldToName = UtilLogic.ParseText(dr["BUYER_NAME"].ToString()),
+                                    Address1 = UtilLogic.ParseText(dr["BUYER_ADDRESS1"].ToString()),
+                                    Address2 = UtilLogic.ParseText(dr["BUYER_ADDRESS2"].ToString()),
+                                    City = UtilLogic.ParseText(dr["BUYER_CITY"].ToString()),
                                     PostalCode = dr["BUYER_PCODE"].ToString(),
-                                    Country = ParseText(dr["BUYER_COUNTRY"].ToString())
+                                    Country = UtilLogic.ParseText(dr["BUYER_COUNTRY"].ToString())
                                 },
                                 Seller = new Seller
                                 {
                                     CompanyID = dr["COMPANY_ID"].ToString(),
                                     CompanyName = dr["COMPANY_NAME"].ToString(),
-                                    Address1 = ParseText(dr["SELLER_ADDRESS1"].ToString()),
-                                    Address2 = ParseText(dr["SELLER_ADDRESS2"].ToString()),
-                                    City = ParseText(dr["SELLER_CITY"].ToString()),
-                                    Province = ParseText(dr["SELLER_CITY"].ToString()),
+                                    Address1 = UtilLogic.ParseText(dr["SELLER_ADDRESS1"].ToString()),
+                                    Address2 = UtilLogic.ParseText(dr["SELLER_ADDRESS2"].ToString()),
+                                    City = UtilLogic.ParseText(dr["SELLER_CITY"].ToString()),
+                                    Province = UtilLogic.ParseText(dr["SELLER_CITY"].ToString()),
                                     PostalCode = dr["SELLER_PCODE"].ToString()
                                 },
                                 Freight = new Freight
@@ -540,36 +526,39 @@ namespace IOEdiProcessor.Logic
                             {
                                 pallet.NumberOfBoxes = boxQty.ToString();
                                 boxQty = 0;
-                                pallet.NumberOfBoxesUOM = row.Box_UOM;
+                                pallet.NumberOfBoxesUOM = row.Box_UOM.ToString();
                                 pallet.NumberOfParts = partsSum.ToString();
-                                pallet.NumberOfPartsUOM = row.Quantity_UOM;
+                                pallet.NumberOfPartsUOM = row.Quantity_UOM.ToString();
                                 pallet.PartTotalDespatchedQty = pieces.ToString();
                                 PalletList.Add(pallet);
                                 pallet = new Pallet();
                                 partsSum = 0;
                             }
                             pallet.PalletID = palletIndex.ToString();
-                            pallet.PalletSerialNumber = row.Pallet_Serial;
+                            pallet.PalletSerialNumber = row.Pallet_Serial.ToString();
                             switch (custID)
                             {
                                 case "VWT":
-                                    pallet.PalletLabelNumber = "6JUN259898559" + row.Pallet_Serial;
-                                    pallet.NumberOfPartsPerBox = row.Quantity;
+                                    pallet.PalletLabelNumber = "6JUN259898559" + row.Pallet_Serial.ToString();
+                                    pallet.NumberOfPartsPerBox = row.Quantity.ToString();
+                                    pallet.LidCode = (row.Lid_Code == null) ? "" : row.Lid_Code;
+                                    pallet.LidDescription = (row.Lid_Code.Trim() != "") ? "Top Cap" : "";
+                                    pallet.LidQuantity = (row.Lid_Description == "") ? "" : "1";
                                     break;
                                 default:
-                                    pallet.NumberOfPartsPerBox = row.Quantity;
-                                    pallet.PalletLabelNumber = row.Pallet_Serial;
+                                    pallet.NumberOfPartsPerBox = row.Quantity.ToString();
+                                    pallet.PalletLabelNumber = row.Pallet_Serial.ToString();
+                                    pallet.LidCode = (row.Lid_Code == null) ? "" : row.Lid_Code;
+                                    pallet.LidDescription = (row.Lid_Description == null) ? "" : row.Lid_Description;
+                                    //pallet.LidQuantity; -- Not used here
                                     break;
                             }
-                            pallet.PalletCode = row.Pallet_Code;
-                            pallet.PalletDescription = ParseText(row.Pallet_Description);
-                            pallet.LidCode = row.Lid_Code;
-                            pallet.LidDescription = (row.Lid_Code.Trim() != "") ? "Top Cap" : "";
-                            //pallet.LidQuantity = (row.Lid_Description == "") ? "" : "1";
+                            pallet.PalletCode = row.Pallet_Code.ToString();
+                            pallet.PalletDescription = UtilLogic.ParseText(row.Pallet_Description.ToString());
                             pallet.BoxMaterialCode = row.Box_Code.ToString();
                             pallet.BoxDescription = row.Box_Description.ToString();
                             pallet.BuyerPartNumber = row.Item_Number.ToString();
-                            pallet.PartDescription = ParseText(row.Item_Description.ToString());
+                            pallet.PartDescription = UtilLogic.ParseText(row.Item_Description.ToString());
                             pallet.ManifestNumber = row.Manifest_No.ToString();
                             pallet.CountryOrigin = "CA"; // HARDCODED -- NO INFORMATION IN TABLES, TAKING COUNTRY FROM LABEL TEMPLATE.
                             pallet.StorageLocation = row.Storage_Location.ToString();
@@ -744,9 +733,9 @@ namespace IOEdiProcessor.Logic
                                 PartTotalDespatchedQty = 0;
                             }
                             part.PartNumber = partNum;
-                            part.PartDescription = ParseText(dr["ITEM_DESCRIPTION"].ToString());
+                            part.PartDescription = UtilLogic.ParseText(dr["ITEM_DESCRIPTION"].ToString());
                             part.AxiomPartNum = dr["fk_Part_Num"].ToString();
-                            part.AxiomPartDescription = ParseText(dr["PART_DESCRIPTION"].ToString());
+                            part.AxiomPartDescription = UtilLogic.ParseText(dr["PART_DESCRIPTION"].ToString());
                             part.PoNumber = dr["PO_NUMBER"].ToString();
                             part.PoLineNumber = dr["MISC"].ToString();
                             part.CountryOrigin = "CA"; // HARDCODED -- NO INFORMATION IN TABLES, TAKING COUNTRY FROM LABEL TEMPLATE.
@@ -782,20 +771,20 @@ namespace IOEdiProcessor.Logic
                                     break;
                             }
                             pallet.PalletCode = dr["AXIOM_PALLET_CODE"].ToString();
-                            pallet.PalletDescription = ParseText(dr["AXIOM_PALLET_DESCRIPTION"].ToString());
+                            pallet.PalletDescription = UtilLogic.ParseText(dr["AXIOM_PALLET_DESCRIPTION"].ToString());
                             pallet.CustomerPalletCode = dr["PALLET_CODE"].ToString();
-                            pallet.CustomerPalletDescription = ParseText(dr["PALLET_DESCRIPTION"].ToString());
+                            pallet.CustomerPalletDescription = UtilLogic.ParseText(dr["PALLET_DESCRIPTION"].ToString());
                             pallet.PalletType = dr["SKID_PKG_TYPE"].ToString();
                             pallet.LidCode = dr["AXIOM_LID_CODE"].ToString();
-                            pallet.LidDescription = ParseText(dr["AXIOM_LID_DESCRIPTION"].ToString());
+                            pallet.LidDescription = UtilLogic.ParseText(dr["AXIOM_LID_DESCRIPTION"].ToString());
                             pallet.CustomerLidCode = dr["LID_CODE"].ToString();
-                            pallet.CustomerLidDescription = ParseText(dr["LID_DESCRIPTION"].ToString());
+                            pallet.CustomerLidDescription = UtilLogic.ParseText(dr["LID_DESCRIPTION"].ToString());
                             pallet.LidType = dr["LID_PKG_TYPE"].ToString();
                             //pallet.LidQuantity = (pallet.LidType == "") ? "" : "1";
                             pallet.BoxMaterialCode = dr["AXIOM_BOX_CODE"].ToString();
-                            pallet.BoxDescription = ParseText(dr["AXIOM_BOX_DESCRIPTION"].ToString());
+                            pallet.BoxDescription = UtilLogic.ParseText(dr["AXIOM_BOX_DESCRIPTION"].ToString());
                             pallet.CustomerBoxCode = dr["BOX_CODE"].ToString();
-                            pallet.CustomerBoxDescription = ParseText(dr["BOX_DESCRIPTION"].ToString());
+                            pallet.CustomerBoxDescription = UtilLogic.ParseText(dr["BOX_DESCRIPTION"].ToString());
                             pallet.BoxType = dr["BOX_TYPE"].ToString();
                             pallet.NumberOfPartsPerBox = dr["QUANTITY"].ToString();
                             palletIndex++;
@@ -1023,17 +1012,5 @@ namespace IOEdiProcessor.Logic
             }
             return sb.ToString();
         }
-
-        protected static string ParseText(string str)
-        {
-            foreach (KeyValuePair<string, string> entry in _parse)
-            {
-                str = str.Replace(entry.Key, entry.Value);
-            }
-            return str;
-        }
-        
-        // Old ASN functions
-
     }
 }

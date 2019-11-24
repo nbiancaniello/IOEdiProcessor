@@ -1,5 +1,7 @@
-﻿using System;
+﻿using IOEdiProcessor.Logic;
+using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Text;
 
 namespace IOEdiProcessor.Data
@@ -18,5 +20,16 @@ namespace IOEdiProcessor.Data
         public SoldTo()
         {
         }
+
+        //public SoldTo(DbDataReader dr)
+        //{
+        //    this.SoldToID = dr["BUYER_ID"].ToString();
+        //    this.SoldToName = UtilLogic.ParseText(dr["BUYER_NAME"].ToString());
+        //    this.Address1 = UtilLogic.ParseText(dr["BUYER_ADDRESS1"].ToString());
+        //    this.Address2 = UtilLogic.ParseText(dr["BUYER_ADDRESS2"].ToString());
+        //    this.City = UtilLogic.ParseText(dr["BUYER_CITY"].ToString());
+        //    this.PostalCode = dr["BUYER_PCODE"].ToString();
+        //    this.Country = UtilLogic.ParseText(dr["BUYER_COUNTRY"].ToString());
+        //}
     }
 }
